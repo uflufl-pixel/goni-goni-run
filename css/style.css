@@ -181,3 +181,26 @@ canvas {
 .tc-left { grid-area: 2 / 1; }
 .tc-right { grid-area: 2 / 3; }
 .tc-down { grid-area: 3 / 2; }
+
+/* --- Narrow / mobile screens ------------------------------------------------
+   The canvas scales down here, so an overlay pinned to the canvas would be much
+   shorter than its text and spill over the HUD and touch controls. Give the menu
+   the whole viewport instead (fixed, scrollable, centered) and trim the type. */
+@media (max-width: 680px) {
+  .overlay {
+    position: fixed;
+    inset: 0;
+    overflow-y: auto;
+    border-radius: 0;
+    padding: 16px;
+  }
+  .panel { margin: auto; padding: 20px; }
+  .panel h1 { font-size: 30px; letter-spacing: 2px; }
+  .panel .sub { font-size: 13px; margin-bottom: 12px; }
+  .panel .hint { font-size: 14px; line-height: 1.65; }
+  .panel .keys { font-size: 12px; }
+  .btn { margin-top: 16px; }
+
+  .hud { letter-spacing: 1px; font-size: 12px; }
+  .hud b { font-size: 15px; margin-left: 4px; }
+}
