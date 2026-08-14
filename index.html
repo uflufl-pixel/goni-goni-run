@@ -1,0 +1,48 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>달려라 고니고니</title>
+<link rel="stylesheet" href="css/style.css" />
+
+<div id="app">
+  <header class="hud">
+    <span class="hud-item">SCORE <b id="score">0</b></span>
+    <span class="hud-item">🍒 <b id="fruit">0/9</b></span>
+    <span class="hud-item">LEVEL <b id="level">1</b></span>
+    <span class="hud-item">LIVES <b id="lives">3</b></span>
+  </header>
+
+  <div class="stage">
+    <canvas id="game" width="640" height="480"></canvas>
+
+    <!-- Overlays -->
+    <div id="overlay" class="overlay">
+      <div class="panel">
+        <h1>🦢 달려라 고니고니</h1>
+        <p class="sub">왕관 쓴 고니의 넝쿨 대모험</p>
+        <p class="hint">오른쪽 아래에서 출발 🦢<br />과일 🍒 을 절반 이상 먹고 좌측 상단 갈대숲 🌾 으로 들어가세요.<br />뱀 🐍 을 피하고 장애물 🌵 은 점프로 뛰어넘으세요!</p>
+        <p class="keys">← → 이동 &nbsp;·&nbsp; ↑ ↓ 넝쿨 &nbsp;·&nbsp; Space 점프 &nbsp;·&nbsp; (WASD 지원)</p>
+        <p class="keys">모바일: 오른쪽 방향패드 &nbsp;·&nbsp; 왼쪽 점프</p>
+        <button id="startBtn" class="btn">시작하기 (Enter)</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <span class="foot-spacer"></span>
+    <span id="msg"></span>
+    <button id="mute" class="mute" title="음소거 (M)" aria-label="음소거">🔊</button>
+  </footer>
+
+  <!-- On-screen controls for touch devices: jump (left) + d-pad (right) -->
+  <div id="touch-controls" class="touch-controls">
+    <button id="btn-jump" class="tc-jump" aria-label="점프">점프</button>
+    <div class="tc-dpad">
+      <button class="tc-dbtn tc-up" data-dir="up" aria-label="위로 (넝쿨)">▲</button>
+      <button class="tc-dbtn tc-left" data-dir="left" aria-label="왼쪽">◀</button>
+      <button class="tc-dbtn tc-right" data-dir="right" aria-label="오른쪽">▶</button>
+      <button class="tc-dbtn tc-down" data-dir="down" aria-label="아래로 (넝쿨)">▼</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/main.js"></script>

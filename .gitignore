@@ -1,0 +1,5 @@
+# macOS
+.DS_Store
+
+# Claude Code local settings (not needed for the game)
+.claude/settings.local.json
